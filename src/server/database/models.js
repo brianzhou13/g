@@ -6,6 +6,12 @@ var gSchema = new Schema({
   bg_value: Number,
   timestamp: String,
   meal: String,
+  year: String,
+  month: String,
+  date: String,
+  hour: String,
+  minute: String,
+  second: String,
 });
 
 var gData = mongoose.model('gData', gSchema);
