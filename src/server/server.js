@@ -29,10 +29,10 @@ app.listen(port, function() {
 			console.log('queue is setup and awaiting messages');
 
 			ch.consume(q, function(msg) {
-				console.log('msg received as: %s', msg.content.toString());
-
+				// console.log('msg received as: %s', msg.content.toString());
+				let data = msg.content.toString();
 				// add it into db
-				addEntry(msg);
+				addEntry(data);
 
 				counter++;
 			});
