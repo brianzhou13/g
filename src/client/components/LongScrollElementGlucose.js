@@ -10,7 +10,7 @@ class LongScrollElementGlucose extends Component {
 
 	render() {
 		return(
-			<div>
+			<div className='cursor-text'>
 				<span>Glucose:</span>
 				<span>{this.props.bg_value}mg/dL</span>
 			</div>

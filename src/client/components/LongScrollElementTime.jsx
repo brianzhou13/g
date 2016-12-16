@@ -16,7 +16,7 @@ class LongScrollElementTime extends Component {
 
 	render() {
 		return(
-			<div>
+			<div className='cursor-text'>
 				<span>{this.props.hour}:{this.props.minute}:{this.props.second}{this.props.hour > 12 ? 'PM' : 'AM'}</span>
 			</div>
 		)

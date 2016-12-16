@@ -73,7 +73,7 @@ class Main extends Component {
 									{
 										target: "data",
 										eventHandlers: {
-											onClick: () => {
+											onMouseOver: () => {
 												return [{
 													target: "labels",
 													mutation: (props) => {
@@ -87,7 +87,7 @@ class Main extends Component {
 
 														return props.text !== null ? { text: curr.bg_value.toString() + 'mg/dL' + '\n' + curr.month.toString() + '/' +
 																																 curr.date.toString() + ' @ ' + curr.hour.toString() + ':' + 
-																																 curr.minute.toString() } : { text: null }
+																																 curr.minute.toString() + (curr.meal !== 'none' ? ' and ' + curr.meal.toString() : ' and no meal')} : { text: null }
 													}
 												}]
 											}

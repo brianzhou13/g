@@ -34,12 +34,13 @@ class LongScrollElement extends Component {
 
 	render() {
 		return(
-			<div className={'long-element btm-border ' + this.props.data._id}>
+			<div className={'long-element btm-border cursor ' + this.props.data._id}>
 				<div>
 					<LongScrollElementDate 
 						date={this.props.data.date}
 						month={this.props.data.month}
 						year={this.props.data.year}
+						meal={this.props.data.meal}
 					/>
 				</div>
 				<div className='elements-time-glucose'>

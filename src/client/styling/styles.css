@@ -81,6 +81,11 @@
 
 /* *************** STYLES FOR THE LONGSCROLL.JSX COMPONENTS */
 
+.element-date-meal {
+	display: flex;
+	justify-content: space-between;
+}
+
 .long-element {
 	padding: 10px 30px 10px 30px;
 }
@@ -96,6 +101,16 @@
 .elements-time-glucose {
 	display: flex;
 	justify-content: space-between;
+}
+
+.cursor {
+  cursor: pointer;
+  /*cursor: hand;*/
+}
+
+.cursor-text:hover {
+  text-decoration: none; /* underline text */
+  border-bottom: 1px solid black;
 }
 
 /* *************** STYLES FOR THE GRAPHBODY.JSX COMPONENT */
