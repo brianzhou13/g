@@ -1,3 +1,74 @@
+/* SourceSansPro Font */
+@font-face {
+  font-family: SourceSansPro;
+  src: url('./fonts/source-sans-pro/SourceSansPro-Regular.otf');
+}
+@font-face {
+  font-family: SourceSansPro;
+  src: url('./fonts/source-sans-pro/SourceSansPro-Bold.otf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: SourceSansPro;
+  src: url('./fonts/source-sans-pro/SourceSansPro-Italic.otf');
+  font-style: italic;
+}
+@font-face {
+  font-family: SourceSansPro;
+  src: url('./fonts/source-sans-pro/SourceSansPro-BoldItalic.otf');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: SourceSansPro;
+  src: url('./fonts/source-sans-pro/SourceSansPro-Light.otf');
+  font-weight: 300;
+}
+@font-face {
+  font-family: SourceSansPro;
+  src: url('./fonts/source-sans-pro/SourceSansPro-LightItalic.otf');
+  font-style: italic;
+  font-weight: 300;
+}
+
+.font {
+	font-weight: 100;
+	font-family: SourceSansPro;
+}
+
+.center {
+	text-align: center;
+}
+
+.btm-border {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(169,169,169);
+}
+
+/* *************** STYLES FOR THE HEADER.JSX COMPONENT */
+
+.header-tag {
+	font-size: 15px;
+	font-style: italic;
+	padding-bottom: 10px;
+}
+
+.header-text {	
+	font-size: 40px;
+	padding-bottom: 20px;
+}
+
+
+.middle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* *************** STYLES FOR THE VICTORY.JSX COMPONENT */
+
+
 .vic-chart {
 
 	/* 
@@ -8,10 +79,10 @@
 	width: 500px;
 }
 
-.middle {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+/* *************** STYLES FOR THE LONGSCROLL.JSX COMPONENTS */
+
+.long-element {
+	padding: 10px 30px 10px 30px;
 }
 
 .long-scroll {
@@ -21,7 +92,16 @@
 	background-color: #eee
 }
 
+.elements-time-glucose {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* *************** STYLES FOR THE GRAPHBODY.JSX COMPONENT */
+
+
 .graph-body {
 	display: flex;
 	justify-content: center;
 }
+
