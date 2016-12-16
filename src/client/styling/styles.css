@@ -20,3 +20,8 @@
 	height: 600px;
 	background-color: #eee
 }
+
+.graph-body {
+	display: flex;
+	justify-content: center;
+}

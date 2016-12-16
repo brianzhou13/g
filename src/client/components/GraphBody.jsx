@@ -12,14 +12,6 @@ class GraphBody extends Component {
 		};
 	}
 
-	// componentDidMount() {
-	// 	var el = this.getDOMNode();
-	// 	d3Chart.create(el, {
-	// 		width: '100%',
-	// 		height: '300px',
-	// 	}, this.getChartState());
-	// }
-
 	elementClicked(elem) {
 		// this will denote the value the user clicked
 		// this will then translate back down to the other view
@@ -33,14 +25,13 @@ class GraphBody extends Component {
 
 	render() {
 		return(
-			<div>
+			<div className='graph-body'>
 				<div>
 					<Victory curr={this.curr} getCurr={this.elementClicked.bind(this)}/>
 				</div>
 				<div>
 					<LongScroll curr={this.curr} getCurr={this.elementClicked.bind(this)}/>
 				</div>
-
 			</div>
 		)
 	}
