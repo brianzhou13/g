@@ -12,7 +12,6 @@ class LongScroll extends Component {
 		// debugger;
 	}
 
-
 	/*
 	 * @ name: mouseElem
 	 * @ input: e
@@ -31,7 +30,10 @@ class LongScroll extends Component {
 			<div className='middle'>
 				<div className='long-scroll font'>
 					{ 
-						this.props.data.map((item) => {
+						this.props.data.map((item, i) => {
+
+							/* determine the color */
+
 							return <LongScrollElement 
 								data={item}
 								curr={this.props.curr}

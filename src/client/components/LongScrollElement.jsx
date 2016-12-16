@@ -1,5 +1,8 @@
 import React, { Component, PropTypes }from 'react';
-import { render } from 'react-dom';
+import { render, findDOMNode } from 'react-dom';
+
+// can use jquery due to time...
+import $ from 'jquery';
 
 import LongScrollElementTime from './LongScrollElementTime';
 import LongScrollElementGlucose from './LongScrollElementGlucose';
@@ -10,11 +13,28 @@ class LongScrollElement extends Component {
 	// requires the time props
 	constructor(props) {
 		super(props);
+
+		this.determineColor = this.determineColor.bind(this);
+	}
+
+	componentDidMount() {
+		// change color once component has mounted
+		this.determineColor();
+	}
+
+	determineColor() {
+		if(this.props.data.bg_value <= 80) {
+			$(`body`).find("." + this.props.data._id).css('background-color', `#FFB347`);
+		} else if (this.props.data.bg_value > 80 && this.props.data.bg_value < 150) {
+			$('body').find("." + this.props.data._id).css('background-color', `#77DD77`);
+		} else {
+			$('body').find("." + this.props.data._id).css('background-color', `#C23B22`);
+		}
 	}
 
 	render() {
 		return(
-			<div className='long-element btm-border'>
+			<div className={'long-element btm-border ' + this.props.data._id}>
 				<div>
 					<LongScrollElementDate 
 						date={this.props.data.date}
@@ -38,7 +58,7 @@ class LongScrollElement extends Component {
 }
 
 LongScrollElement.propTypes = {
-	data: PropTypes.array.isRequired,
+	data: PropTypes.object.isRequired,
 	curr: PropTypes.object.isRequired, // not sure
 	// getCurr: PropTypes.func.isRequired,
 };

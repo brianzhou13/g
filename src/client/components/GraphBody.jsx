@@ -30,12 +30,6 @@ class GraphBody extends Component {
 		// }, 1000);
 	}
 
-	componentWillUpdate (nextProps, nextState) {
-		console.log(`nextState: ${nextState}`);
-		console.log(`nextProps: ${nextProps}`);
-		debugger;
-	}
-
 	/*
 	 * @ name: getData
 	 * @ input: n/a
