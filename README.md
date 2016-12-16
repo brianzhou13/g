@@ -85,4 +85,11 @@ Testing was differed from back-end and front-end. Not much was done on the front
 ## Screenshots:
 I do apologize for the complexity in project startup. 
 
+App Screenshot: 
+
+<img width="1680" alt="g-screen-shot" src="https://cloud.githubusercontent.com/assets/5092263/21280919/e792c5d0-c39d-11e6-9f5a-a8aa771978ff.png">
+
+Red-Green-Dot Display:
+
+![red-green-dots](https://cloud.githubusercontent.com/assets/5092263/21280931/f75e09de-c39d-11e6-8862-81e361c15889.png)
 
