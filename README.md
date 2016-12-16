@@ -66,7 +66,7 @@ Testing was differed from back-end and front-end. Not much was done on the front
 * `npm run add` to start the worker
 * `npm test` to start the tests
 
-## Expected Feature List :*( :
+## Expected Feature List:
 
 ### Graphical Display:
 1. build graphical view to display readings - [done]
