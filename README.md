@@ -48,13 +48,15 @@ Testing was differed from back-end and front-end. Not much was done on the front
 * RabbitMQ
 * Mongo / Mongoose
 * Mocha / Chai / Enzyme
+* jQuery
 
-## Short Startup (without mongo / mongod)
+## Short Startup (with dummy data already-inputted)
 * `npm install` to install the package dependencies
 * `npm run wp` to start webpack
+* `mongod` still need mongodb for app to be running, but we aren't pulling data from it
 * `npm start` to start the server
 
-## FULL Startup
+## Full Startup
 * `npm install` to install package dependencies
 * `brew install rabbitmq` to install RabbitMQ
 * `cd /usr/local/sbin` to start the RabbitMQ queue
