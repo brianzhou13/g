@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import * as V from 'victory';
-import axios from 'axios';
 
 /* example of a data entry
 	{
@@ -18,61 +17,13 @@ import axios from 'axios';
 		year:"2015"
 	},
 */
-const test_data = [
-	{
-		__v:0,
-		_id:"585328decf906337147a803f",
-		bg_value:114,
-		hour: 5,
-		meal:"before_meal",
-		minute: 21,
-		month: 1,
-		second: 21,
-		timestamp:"2015-01-01T05:21:21",
-		year: 2015
-	},
-];
-
 
 class Main extends Component {
 
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			data: [] // just set it initially to get rid of warnings
-		};
-
-		this.getData = this.getData.bind(this);
 	}
 
-	componentWillMount() {
-		// ivoked immediately before mounting-- called before render
-		this.getData();
-	}
-
-	componentDidMount() {
-		// once component mounts, we can have it check every hour for new data
-		setInterval(() => {
-			this.getData();
-		}, 60 * 60 * 1000);
-		// setInterval(() => {
-		// 	this.getData();
-		// }, 1000);
-	}
-
-	getData () {
-		axios.get('/api/get-data')
-			.then((resp) => {
-				// resp seems to come in properly
-				this.setState({
-					data: resp.data
-				});
-			})
-			.catch((err) => {
-				console.log(`error occurred in the getData method: ${err}`);
-			});
-	}
 
 	render() {
 		// victoryAxis made oru data go away...
@@ -81,7 +32,6 @@ class Main extends Component {
 						// />
 		return (
 			<div className='vic-chart middle'>
-				
 					<V.VictoryChart
 						theme={V.VictoryTheme.material}
 						animate={{duration: 500}}
@@ -148,7 +98,7 @@ class Main extends Component {
 									/>
 								}
 								label={(d) => d.hour}
-								data={this.state.data}
+								data={this.props.data}
 								x = "hour"
 								y = "bg_value"
 								animate={{
@@ -162,8 +112,6 @@ class Main extends Component {
 			            }
 			          }}
 							/>
-							
-							
 					</V.VictoryChart>
 			</div>
 		)
@@ -171,8 +119,9 @@ class Main extends Component {
 }
 
 Main.Proptypes = {
-	curr: PropTypes.string,
-	getCurr: PropTypes.func,
+	curr: PropTypes.string.isRequired,
+	getCurr: PropTypes.func.isRequired,
+	data: PropTypes.array.isRequired,
 };
 
 
