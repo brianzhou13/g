@@ -81,7 +81,7 @@ var generateNum = (d, m) => {
 		// else if meal >= 0.6 -- nothing gets assigned
 
 		// checks for all value to make sure they are true
-		if(hour >= 1 && hour <= 24 && minute >= 1 && minute <= 59 && value > 80 || value < 210) {
+		if(hour >= 1 && hour <= 12 && minute >= 1 && minute <= 59 && value > 60 && value < 210) {
 			data_okay = true;
 		}
 	}
