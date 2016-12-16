@@ -21,10 +21,10 @@ app.listen(port, function() {
 
 		//create the channel
 		conn.createChannel(function(err, ch) {
-			var q = 'data';
+			var q = 'data2';
 			var counter = 0;
 
-			ch.assertQueue(q, {durable: false});
+			ch.assertQueue(q, {durable: false, autoDelete: true});
 
 			console.log('queue is setup and awaiting messages');
 
@@ -36,8 +36,11 @@ app.listen(port, function() {
 
 				counter++;
 			});
+		});
+		setTimeout(() => {
+
 		})
 
-	}, {noAck: true});
+	}, {noAck: false});
 
 });

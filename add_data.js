@@ -4,8 +4,8 @@ amqp.connect('amqp://localhost', function(err, conn) {
 
 	conn.createChannel(function(err, ch) {
 
-		const q = 'data';
-		ch.assertQueue(q, {durable: false}); // what do they mean (?)
+		const q = 'data2';
+		ch.assertQueue(q, {durable: false, autoDelete: true}); // what do they mean (?)
 
 		let counter = 1;
 		let date = 1;
@@ -37,7 +37,7 @@ amqp.connect('amqp://localhost', function(err, conn) {
 	setTimeout(function() {
 		conn.close();
 		process.exit(0);
-	}, 60000);
+	}, 6000);
 });
 
 // need 100 datapoints for 3 months ~ 1 point a day

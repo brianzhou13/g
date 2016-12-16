@@ -29,8 +29,10 @@ module.exports = function(app, express) {
 		next();
 	});
 
-	// app.set('views', __dirname + '/views');
-	// app.set('view engine', 'ejs');
+	// app.set('views', __dirname + '/../client/');
+	// app.engine('html', require('ejs').renderFile);
+	// app.set('view engine', 'html');
 
-	// app.use(express.static(__dirname + '/../client/dist/index.html'));
+	app.use(express.static(__dirname + '/../client/'));
 }
+

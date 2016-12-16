@@ -10,8 +10,9 @@ module.exports = function(app, express) {
 			getAll(res);
 		});
 
-	app.route('*')
+	app.route('/*')
 		.get(function(req, res) {
 		  res.sendFile(path.join(__dirname, '../client/index.html'));
+		  // res.render('index.html');
 		});
 };
