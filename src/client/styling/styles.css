@@ -43,7 +43,7 @@
 .btm-border {
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: rgb(169,169,169);
+  border-bottom-color: #000
 }
 
 /* *************** STYLES FOR THE HEADER.JSX COMPONENT */
@@ -89,7 +89,7 @@
 	/* defined by requirements to be 300px by 600px*/
 	width: 300px;
 	height: 600px;
-	background-color: #eee
+	background-color: #fff
 }
 
 .elements-time-glucose {
