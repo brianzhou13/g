@@ -1,0 +1,22 @@
+.vic-chart {
+
+	/* 
+		going to explicitly define the width...
+		because styling in Victory is very weird...
+	*/
+
+	width: 500px;
+}
+
+.middle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.long-scroll {
+	/* defined by requirements to be 300px by 600px*/
+	width: 300px;
+	height: 600px;
+	background-color: #eee
+}
