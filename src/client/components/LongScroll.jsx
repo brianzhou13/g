@@ -27,7 +27,7 @@ class LongScroll extends Component {
 
 	render() {
 		return(
-			<div className='middle'>
+			<div className='middle outer-long-scroll'>
 				<div className='long-scroll font'>
 					{ 
 						this.props.data.map((item, i) => {

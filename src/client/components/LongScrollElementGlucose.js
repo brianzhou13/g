@@ -11,7 +11,7 @@ class LongScrollElementGlucose extends Component {
 	render() {
 		return(
 			<div>
-				<span>Glucose Levels:</span>
+				<span>Glucose:</span>
 				<span>{this.props.bg_value}mg/dL</span>
 			</div>
 		)
