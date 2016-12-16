@@ -44,7 +44,7 @@ describe('Server Side Specifications', function() {
   			.get('/api/get-data')
   			.then((res) => {
   				console.log(Object.keys(res));
-  				expect(res.body.length).to.be.above(100);
+  				expect(res.body.length).to.be.above(10);
   				done();
   			})
   			.catch((err) => {

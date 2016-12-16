@@ -4,11 +4,12 @@
   "description": "glook project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=production mocha src/testing/helpers/browser.js src/testing/specs/*.spec.js",
     "wp": "./node_modules/.bin/webpack -d --watch",
     "start": "NODE_ENV=development node src/server/server.js",
     "rabbit": "ps -eaf | grep erl",
-    "t": "NODE_ENV=production mocha src/testing/specs"
+    "t": "NODE_ENV=production mocha src/testing/specs",
+    "add": "node add_data.js"
   },
   "repository": {
     "type": "git",
@@ -43,8 +44,12 @@
     "webpack": "^1.14.0"
   },
   "devDependencies": {
+    "enzyme": "^2.6.0",
+    "jsdom": "^9.8.3",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
+    "react-addons-test-utils": "^15.4.1",
+    "sinon": "^1.17.6",
     "supertest": "^2.0.1",
     "supertest-as-promised": "^4.0.2",
     "webpack-dev-middleware": "^1.8.4",
