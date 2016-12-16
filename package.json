@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "wp": "./node_modules/.bin/webpack -d --watch",
     "start": "node src/server/server.js",
-    "rabbit": "ps -eaf | grep erl"
+    "rabbit": "ps -eaf | grep erl",
+    "t": "NODE_ENV=development mocha src/testing/specs"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,8 @@
   "devDependencies": {
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
+    "supertest": "^2.0.1",
+    "supertest-as-promised": "^4.0.2",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-hot-middleware": "^2.13.2"
   }

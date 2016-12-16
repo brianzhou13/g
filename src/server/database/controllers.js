@@ -42,6 +42,7 @@ module.exports = {
 					year: entry.year,
 					month: entry.month,
 					hour: entry.hour,
+					date: entry.date,
 					minute: entry.minute,
 					second: entry.second,
 				}).save((err, item) => {
@@ -74,9 +75,13 @@ module.exports = {
 		g.find({}, (err, data) => {
 			if(err) {
 				console.log('error in getting back all g-entries' + err);
+				res.status(400).send(err);
 			} else {
 				// sending all data back
-				res.send(data);
+
+				// console.log('data @ 0 is: ', data[0]);
+					// data retrieved back looks good
+				res.status(200).send(data);
 			}
 		});
 	}
