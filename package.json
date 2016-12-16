@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "wp": "./node_modules/.bin/webpack -d --watch",
-    "start": "node src/server/server.js",
+    "start": "NODE_ENV=development node src/server/server.js",
     "rabbit": "ps -eaf | grep erl",
-    "t": "NODE_ENV=development mocha src/testing/specs"
+    "t": "NODE_ENV=production mocha src/testing/specs"
   },
   "repository": {
     "type": "git",

@@ -10,7 +10,7 @@ var compiler = webpack(webpackConfig);
 module.exports = function(app, express) {
 
 	// this check will turn off HMR
-	if(process.env.NODE_ENV === 'production') {
+	if(process.env.NODE_ENV === 'development') {
 		app.use(webpackDevMiddleware(compiler, {
 			hot: true,
 			publicPath: webpackConfig.output.publicPath,

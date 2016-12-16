@@ -9,3 +9,6 @@ src/client/dist/public
 
 # bundle
 dist
+
+# Notes.text
+Notes.txt
