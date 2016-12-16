@@ -5,6 +5,12 @@ import LongScroll from './LongScroll';
 import axios from 'axios';
 var $ = require('jquery');
 
+/* ************ FOR SHORT-START INSTRUCTIONS ************ */
+/* ************ UNCOMMENT LINES: 32, 33 ************ */
+/* ************ AND COMMENT LINES: 25, 26, 38,  65-75,  ************ */
+/* ************ /end  SHORT-START INSTRUCTIONS *************/
+
+
 
 class GraphBody extends Component {
 	constructor(props) {
@@ -15,20 +21,37 @@ class GraphBody extends Component {
 			data: [],
 		};
 
-		this.getData = this.getData.bind(this);
-		this.getData();
+		// COMMENT FOR SHORT-START
+		// this.getData = this.getData.bind(this);
+		// this.getData();
 	}
 
 
 	componentDidMount() {
-		// once component mounts, we can have it check every hour for new data
+
+		// UNCOMMENT FOR SHORT-START
+		this.shortStartGetData = this.shortStartGetData.bind(this);
+		this.shortStartGetData();
+
+		// check every hour for data
 		setInterval(() => {
-			this.getData();
+			// this.getData();
 		}, 1000 * 60 * 60);
 		// setInterval(() => {
 		// 	this.getData();
 		// }, 1000);
 	}
+
+	/* 
+	 * @ name: shortStartGetData
+	 * @ fn: use for short-start -- will not call backend for data
+	 */
+
+	 shortStartGetData() {
+	 	this.setState({
+	 		data: require('../shortStartData')
+	 	});
+	 }
 
 	/*
 	 * @ name: getData
@@ -37,17 +60,20 @@ class GraphBody extends Component {
 	 * @ fn: updates the state with data retrieved from API call
 	 */
 	getData () {
-		axios.get('/api/get-data')
-			.then((resp) => {
-				// resp seems to come in properly
-				this.setState({
-					data: resp.data
-				});
-				console.log(`end of -getData`);
-			})
-			.catch((err) => {
-				console.log(`error occurred in the getData method: ${err}`);
-			});
+
+		/* ************  COMMENT BELOW OUT IF YOU WANT TO USE THE SHORT START ************ */
+		// axios.get('/api/get-data')
+		// 	.then((resp) => {
+		// 		// resp seems to come in properly
+		// 		this.setState({
+		// 			data: resp.data
+		// 		});
+		// 		console.log(`end of -getData`);
+		// 	})
+		// 	.catch((err) => {
+		// 		console.log(`error occurred in the getData method: ${err}`);
+		// 	});
+		/* *** /END SHORT-START COMMENTING */
 	}
 
 	/*
